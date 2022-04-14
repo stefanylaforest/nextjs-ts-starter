@@ -1,3 +1,3 @@
-# nextjs-boilerplate
+# Nextjs + TypeScript
 
-A Next.js Boilerplate in TypeScript
+A Next.js starter template in TypeScript
