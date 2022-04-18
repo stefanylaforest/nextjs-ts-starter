@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextInput from "../ui-library/textInput/textInput";
-import NumberInput from "../ui-library/numberinput/numberInput";
+import NumberInput from "../ui-library/numberInput/numberInput";
 
 const InputExample: React.FunctionComponent = () => {
   const [formValues, setFormValues] = useState({
