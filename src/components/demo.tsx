@@ -93,7 +93,7 @@ const Demo: React.FunctionComponent = () => {
             header={<img src="/images/card-photo-example-2.jpg" alt="Turkey" />}
             body={
               <div>
-                <h3>Turkish Riveria</h3>
+                <h3>Turkish Rivieria</h3>
                 <p>A week itinerary in Bodrum, Turkey</p>
               </div>
             }
