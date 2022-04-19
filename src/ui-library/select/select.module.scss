@@ -1,0 +1,33 @@
+.arrowSelect {
+  position: relative;
+  max-width: 300px;
+
+  select {
+    margin-top: 8px;
+    border-radius: 6px;
+    padding: 8px 10px;
+    border: 1px solid $medium-grey;
+    background-color: $white;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 100%;
+    color: $black;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:focus {
+      outline: transparent;
+      box-shadow: $inputBoxshadow;
+    }
+  }
+
+  svg {
+    position: absolute;
+    width: 11px;
+    right: 10px;
+    top: 58%;
+    transform: translate(0, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
