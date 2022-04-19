@@ -17,12 +17,6 @@ a {
   font-family: $main-font;
 }
 
-input,
-select,
-textarea {
-  font-size: 16px; // font-size < 16px makes ios devices zoom in
-}
-
 h1,
 h2,
 h3,
@@ -61,4 +55,27 @@ li {
   &::selection {
     background: $paleSecondary;
   }
+}
+
+input,
+select,
+textarea {
+  font-size: 16px; // font-size < 16px makes ios devices zoom in
+  margin-top: 8px;
+  border-radius: $borderRadius;
+  padding: 8px 25px 8px 10px;
+  border: 1px solid $primary;
+  background-color: transparent;
+  max-width: 300px;
+  width: 100%;
+  &:focus {
+    outline: transparent;
+    box-shadow: $inputBoxshadow;
+    background-color: $white;
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
 }

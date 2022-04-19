@@ -1,18 +1,6 @@
 import React from "react";
 
-import styles from "./numberInput.module.scss";
-
-interface NumberInputProps {
-  label: string;
-  name: string;
-  value: number | string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
-  min?: number;
-  max?: number;
-  readonly?: boolean;
-  step?: number;
-}
+import NumberInputProps from "./interfaces";
 
 const NumberInput: React.FunctionComponent<NumberInputProps> = (props) => {
   const {
@@ -27,11 +15,10 @@ const NumberInput: React.FunctionComponent<NumberInputProps> = (props) => {
     step = 1,
   } = props;
   return (
-    <label className={styles.label}>
+    <label>
       {label}
       {required && <>&nbsp;*</>}
       <input
-        className={styles.input}
         type="number"
         name={name}
         value={value}

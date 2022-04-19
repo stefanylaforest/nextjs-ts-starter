@@ -1,17 +1,6 @@
 import React from "react";
 
-import styles from "./textInput.module.scss";
-
-export interface TextInputProps {
-  value: string;
-  name: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  label?: string;
-  required?: boolean;
-  placeholder?: string;
-  maxLength?: number;
-  readonly?: boolean;
-}
+import TextInputProps from "./interfaces";
 
 const TextInput = (props: TextInputProps) => {
   const {
@@ -26,11 +15,10 @@ const TextInput = (props: TextInputProps) => {
   } = props;
 
   return (
-    <label className={styles.label}>
+    <label>
       {label}
       {required && <>&nbsp;*</>}
       <input
-        className={styles.input}
         type={"text"}
         name={name}
         onChange={onChange}
