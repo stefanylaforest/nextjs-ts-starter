@@ -21,3 +21,20 @@ select,
 textarea {
   font-size: 16px; // font-size < 16px makes ios devices zoom in
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+input,
+select,
+textarea,
+span,
+label,
+input {
+  color: $black;
+}

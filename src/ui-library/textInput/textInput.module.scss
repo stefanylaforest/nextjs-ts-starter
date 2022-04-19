@@ -12,7 +12,7 @@
   border: 1px solid $medium-grey;
 
   &:focus {
-    outline: none;
+    outline: transparent;
     box-shadow: $inputBoxshadow;
   }
 }
