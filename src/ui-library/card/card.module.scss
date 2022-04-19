@@ -1,0 +1,35 @@
+.cardWrapper {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: center;
+  height: 450px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid $medium-grey;
+  background-color: $white;
+  box-sizing: border-box;
+  margin: 10px 10px 10px 0;
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: $borderRadius;
+  }
+
+  &:hover {
+    box-shadow: $cardBoxShadow;
+  }
+}
+
+.cardBody {
+  margin: 5px 0;
+}
+
+.cardFooter {
+  margin-top: auto;
+}

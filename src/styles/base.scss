@@ -7,8 +7,9 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: $primary;
+  font-weight: bold;
 }
 
 * {
@@ -41,4 +42,23 @@ input {
 
 .bold {
   font-weight: bold;
+}
+
+h2 {
+  color: $accentColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label,
+li {
+  &::selection {
+    background: $paleSecondary;
+  }
 }
