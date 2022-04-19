@@ -1,16 +1,6 @@
 import React from "react";
 
-interface NumberInputProps {
-  label: string;
-  name: string;
-  value: number | string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
-  min?: number;
-  max?: number;
-  readonly?: boolean;
-  step?: number;
-}
+import NumberInputProps from "./interfaces";
 
 const NumberInput: React.FunctionComponent<NumberInputProps> = (props) => {
   const {

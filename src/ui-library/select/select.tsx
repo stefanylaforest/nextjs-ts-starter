@@ -2,17 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
+import SelectProps from "./interfaces";
 import styles from "./select.module.scss";
-
-interface SelectProps {
-  name: string;
-  options: string[];
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  placeholder?: string;
-  required?: boolean;
-  label?: string;
-  defaultValue?: string;
-}
 
 const Select = (props: SelectProps) => {
   const {
