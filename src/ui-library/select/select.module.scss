@@ -4,7 +4,7 @@
 
   select {
     margin-top: 8px;
-    border-radius: 6px;
+    border-radius: $borderRadius;
     padding: 8px 25px 8px 10px;
     border: 1px solid $medium-grey;
     background-color: $white;
