@@ -59,9 +59,9 @@
   &:before {
     margin-right: 10px;
     content: "";
-    background-color: $white;
+    background-color: transparent;
     border-radius: $borderRadius;
-    border: 1px solid $medium-grey;
+    border: 1px solid $primary;
     height: 21px;
     width: 21px;
     min-width: 21px;

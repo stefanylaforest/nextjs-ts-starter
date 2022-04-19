@@ -3,22 +3,12 @@
   max-width: 300px;
 
   select {
-    margin-top: 8px;
-    border-radius: $borderRadius;
     padding: 8px 25px 8px 10px;
-    border: 1px solid $medium-grey;
-    background-color: $white;
     -webkit-appearance: none;
     appearance: none;
     position: relative;
-    width: 100%;
-    color: $black;
     text-overflow: ellipsis;
     white-space: nowrap;
-    &:focus {
-      outline: transparent;
-      box-shadow: $inputBoxshadow;
-    }
   }
 
   svg {

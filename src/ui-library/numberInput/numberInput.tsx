@@ -1,7 +1,5 @@
 import React from "react";
 
-import styles from "./numberInput.module.scss";
-
 interface NumberInputProps {
   label: string;
   name: string;
@@ -27,11 +25,10 @@ const NumberInput: React.FunctionComponent<NumberInputProps> = (props) => {
     step = 1,
   } = props;
   return (
-    <label className={styles.label}>
+    <label>
       {label}
       {required && <>&nbsp;*</>}
       <input
-        className={styles.input}
         type="number"
         name={name}
         value={value}

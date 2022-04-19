@@ -1,7 +1,5 @@
 import React from "react";
 
-import styles from "./textInput.module.scss";
-
 export interface TextInputProps {
   value: string;
   name: string;
@@ -26,11 +24,10 @@ const TextInput = (props: TextInputProps) => {
   } = props;
 
   return (
-    <label className={styles.label}>
+    <label>
       {label}
       {required && <>&nbsp;*</>}
       <input
-        className={styles.input}
         type={"text"}
         name={name}
         onChange={onChange}
