@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 
 import styles from "../styles/pages/index.module.scss";
 
-import Demo from "../components/demo";
+import Demo from "../components/demo/demo";
 
 const Home: NextPage = () => {
   return (

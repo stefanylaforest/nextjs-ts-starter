@@ -5,13 +5,13 @@ import styles from "./button.module.scss";
 
 const Button = (props: ButtonProps) => {
   const {
-    isPrimary = true,
+    variant = "primary",
     children,
     onClick,
     disabled = false,
     type = "button",
   } = props;
-  const stylesheet = isPrimary ? styles.primary : styles.secondary;
+  const stylesheet = styles[variant];
   return (
     <button
       className={stylesheet}

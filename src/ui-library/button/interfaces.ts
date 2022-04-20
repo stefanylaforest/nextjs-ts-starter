@@ -1,8 +1,8 @@
 export default interface ButtonProps {
+  variant: string;
   children: React.ReactNode;
   onClick: () => void;
   type?: "submit" | "reset" | "button";
-  isPrimary?: boolean;
   disabled?: boolean;
   isVisible?: boolean;
 }
