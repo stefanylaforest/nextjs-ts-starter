@@ -43,3 +43,19 @@
   border: 1px solid $primary;
   color: $primary;
 }
+
+.icon {
+  background-color: transparent;
+  color: $black;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  &:hover {
+    color: $secondary;
+  }
+}

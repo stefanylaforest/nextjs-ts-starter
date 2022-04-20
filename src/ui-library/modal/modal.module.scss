@@ -1,0 +1,40 @@
+.bodyOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0, 0.6);
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.modalWrapper {
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100000;
+  background-color: $white;
+  border-radius: 20px;
+  vertical-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  h2 {
+    color: $primary;
+  }
+}
+
+.footer {
+  margin-top: auto;
+}

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./demo.module.scss";
 
@@ -8,8 +10,7 @@ import Select from "../../ui-library/select/select";
 import CheckboxInput from "../../ui-library/checkboxInput/checkboxInput";
 import Card from "../../ui-library/card/card";
 import Button from "../../ui-library/button/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import Modal from "../../ui-library/modal/modal";
 
 const Demo: React.FunctionComponent = () => {
   const [formValues, setFormValues] = useState({
@@ -19,10 +20,11 @@ const Demo: React.FunctionComponent = () => {
     developer: false,
     employed: true,
   });
+  const [showModal, setShowModal] = useState(false);
 
   const onInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  ): void => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
     const val = type === "checkbox" ? checked : value;
@@ -31,7 +33,7 @@ const Demo: React.FunctionComponent = () => {
 
   const selectValues = ["canada", "usa"];
 
-  const onClickHandler = () => {
+  const onClickHandler = (): void => {
     alert("button clicked");
   };
 
@@ -120,14 +122,41 @@ const Demo: React.FunctionComponent = () => {
       </div>
       <div>
         <h2>Buttons</h2>
-        <Button onClick={onClickHandler}>Primary Button</Button>
-        <Button isPrimary={false} onClick={onClickHandler}>
+        <Button variant={"primary"} onClick={onClickHandler}>
+          Primary Button
+        </Button>
+        <Button variant={"secondary"} onClick={onClickHandler}>
           <FontAwesomeIcon icon={faShoppingCart} />
           Secondary Button
         </Button>
-        <Button onClick={onClickHandler} disabled={true}>
+        <Button variant={"secondary"} onClick={onClickHandler} disabled={true}>
           Disabled Button
         </Button>
+      </div>
+      <div>
+        <h2>Modal Demo</h2>
+        <Button variant={"primary"} onClick={() => setShowModal(true)}>
+          Click To See Modal
+        </Button>
+        <Modal
+          show={showModal}
+          closeModal={() => setShowModal(false)}
+          title={"Modal Title"}
+          footer={
+            <Button
+              variant={"secondary"}
+              onClick={onClickHandler}
+              disabled={true}
+            >
+              Disabled Button
+            </Button>
+          }
+        >
+          <div>
+            Modal Body Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </Modal>
       </div>
     </div>
   );
