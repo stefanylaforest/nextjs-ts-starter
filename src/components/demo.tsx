@@ -7,6 +7,9 @@ import NumberInput from "../ui-library/numberInput/numberInput";
 import Select from "../ui-library/select/select";
 import CheckboxInput from "../ui-library/checkboxInput/checkboxInput";
 import Card from "../ui-library/card/card";
+import Button from "../ui-library/button/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Demo: React.FunctionComponent = () => {
   const [formValues, setFormValues] = useState({
@@ -27,6 +30,10 @@ const Demo: React.FunctionComponent = () => {
   };
 
   const selectValues = ["canada", "usa"];
+
+  const onClickHandler = () => {
+    alert("button clicked");
+  };
 
   return (
     <div>
@@ -100,6 +107,17 @@ const Demo: React.FunctionComponent = () => {
             footer={<a href="">Read Article</a>}
           />
         </div>
+      </div>
+      <div>
+        <h2>Buttons</h2>
+        <Button onClick={onClickHandler}>Primary Button</Button>
+        <Button isPrimary={false} onClick={onClickHandler}>
+          <FontAwesomeIcon icon={faShoppingCart} />
+          Secondary Button
+        </Button>
+        <Button onClick={onClickHandler} disabled={true}>
+          Disabled Button
+        </Button>
       </div>
     </div>
   );
