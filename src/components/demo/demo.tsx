@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import styles from "./demo.module.scss";
 
-import TextInput from "../ui-library/textInput/textInput";
-import NumberInput from "../ui-library/numberInput/numberInput";
-import Select from "../ui-library/select/select";
-import CheckboxInput from "../ui-library/checkboxInput/checkboxInput";
-import Card from "../ui-library/card/card";
-import Button from "../ui-library/button/button";
+import TextInput from "../../ui-library/textInput/textInput";
+import NumberInput from "../../ui-library/numberInput/numberInput";
+import Select from "../../ui-library/select/select";
+import CheckboxInput from "../../ui-library/checkboxInput/checkboxInput";
+import Card from "../../ui-library/card/card";
+import Button from "../../ui-library/button/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -92,12 +92,22 @@ const Demo: React.FunctionComponent = () => {
         <h2>Card</h2>
         <div className={styles.container}>
           <Card
-            header={<img src="/images/card-photo-example-1.jpg" alt="lisbon" />}
+            header={
+              <img
+                src="/images/card-photo-example-1.jpg"
+                alt="Photo by Veronika Jorjobert on Unsplash - https://unsplash.com/photos/mR_AxcbVivg"
+              />
+            }
             body={<h3>Lisbon</h3>}
             footer={<a href="">Read Article</a>}
           />
           <Card
-            header={<img src="/images/card-photo-example-2.jpg" alt="Turkey" />}
+            header={
+              <img
+                src="/images/card-photo-example-2.jpg"
+                alt="Photo by Mert Kahveci on Unsplash - https://unsplash.com/photos/fD3hLQ28BtY"
+              />
+            }
             body={
               <div>
                 <h3>Turkish Rivieria</h3>
