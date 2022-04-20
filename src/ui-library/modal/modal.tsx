@@ -6,7 +6,7 @@ import ModalProps from "./interfaces";
 import styles from "./modal.module.scss";
 import Button from "../button/button";
 
-const Modal = (props: ModalProps) => {
+const Modal = (props: ModalProps): JSX.Element | null => {
   const { show, closeModal, title, children, footer = undefined } = props;
 
   if (!show) {

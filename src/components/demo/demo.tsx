@@ -12,7 +12,7 @@ import Card from "../../ui-library/card/card";
 import Button from "../../ui-library/button/button";
 import Modal from "../../ui-library/modal/modal";
 
-const Demo: React.FunctionComponent = () => {
+const Demo: React.FunctionComponent = (): JSX.Element => {
   const [formValues, setFormValues] = useState({
     name: "",
     age: "",

@@ -5,7 +5,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import SelectProps from "./interfaces";
 import styles from "./select.module.scss";
 
-const Select = (props: SelectProps) => {
+const Select = (props: SelectProps): JSX.Element => {
   const {
     onChange,
     name,

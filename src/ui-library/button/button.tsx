@@ -3,7 +3,7 @@ import React from "react";
 import ButtonProps from "./interfaces";
 import styles from "./button.module.scss";
 
-const Button = (props: ButtonProps) => {
+const Button = (props: ButtonProps): JSX.Element => {
   const {
     variant = "primary",
     children,
