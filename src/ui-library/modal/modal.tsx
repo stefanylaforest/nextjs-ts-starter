@@ -6,7 +6,7 @@ import ModalProps from "./interfaces";
 import styles from "./modal.module.scss";
 import Button from "../button/button";
 
-const Modal = (props: ModalProps) => {
+const Modal = (props: ModalProps): JSX.Element | null => {
   const { show, closeModal, title, children, footer = undefined } = props;
 
   if (!show) {
@@ -21,7 +21,7 @@ const Modal = (props: ModalProps) => {
             <FontAwesomeIcon icon={faTimes} />
           </Button>
         </div>
-        <div>{children}</div>
+        <div className={styles.body}>{children}</div>
         {footer && <div className={styles.footer}>{footer}</div>}
       </div>
     </div>

@@ -1,7 +1,8 @@
-.primary,
-.secondary {
+.primary-large,
+.primary-small,
+.secondary-large,
+.secondary-small {
   margin: 5px;
-  padding: 20px;
   border-radius: $borderRadius;
   font-size: 16px;
   cursor: pointer;
@@ -32,16 +33,28 @@
   }
 }
 
-.primary {
+.primary-large,
+.primary-small {
   background-color: $primary;
   border: 1px solid $primary;
   color: $white;
 }
 
-.secondary {
+.secondary-large,
+.secondary-small {
   background-color: transparent;
   border: 1px solid $primary;
   color: $primary;
+}
+
+.primary-large,
+.secondary-large {
+  padding: 20px;
+}
+
+.primary-small,
+.secondary-small {
+  padding: 10px 20px;
 }
 
 .icon {

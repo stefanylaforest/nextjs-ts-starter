@@ -5,7 +5,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import CheckboxInputProps from "./interfaces";
 import styles from "./checkboxInput.module.scss";
 
-const CheckboxInput = (props: CheckboxInputProps) => {
+const CheckboxInput = (props: CheckboxInputProps): JSX.Element => {
   const { name, label, onChange, checked = false, disabled = false } = props;
   return (
     <div className={styles.container}>

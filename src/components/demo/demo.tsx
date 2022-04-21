@@ -12,7 +12,7 @@ import Card from "../../ui-library/card/card";
 import Button from "../../ui-library/button/button";
 import Modal from "../../ui-library/modal/modal";
 
-const Demo: React.FunctionComponent = () => {
+const Demo: React.FunctionComponent = (): JSX.Element => {
   const [formValues, setFormValues] = useState({
     name: "",
     age: "",
@@ -144,18 +144,18 @@ const Demo: React.FunctionComponent = () => {
           title={"Modal Title"}
           footer={
             <Button
-              variant={"secondary"}
-              onClick={onClickHandler}
-              disabled={true}
+              variant={"primary"}
+              onClick={() => setShowModal(false)}
+              size={"small"}
             >
-              Disabled Button
+              Close
             </Button>
           }
         >
-          <div>
+          <p>
             Modal Body Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
+          </p>
         </Modal>
       </div>
     </div>
