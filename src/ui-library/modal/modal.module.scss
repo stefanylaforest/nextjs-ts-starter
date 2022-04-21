@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   background: rgb(0, 0, 0, 0.6);
-  z-index: 5;
+  z-index: $modalOverlayIndex;
   width: 100%;
   height: 100%;
   display: flex;
@@ -19,7 +19,7 @@
   max-width: 640px;
   margin: 0 auto;
   position: relative;
-  z-index: 100000;
+  z-index: $modalIndex;
   background-color: $white;
   border-radius: 20px;
   vertical-align: center;
