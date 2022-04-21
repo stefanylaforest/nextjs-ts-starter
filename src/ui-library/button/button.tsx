@@ -10,8 +10,10 @@ const Button = (props: ButtonProps): JSX.Element => {
     onClick,
     disabled = false,
     type = "button",
+    size = "large",
   } = props;
-  const stylesheet = styles[variant];
+  const stylesheet =
+    variant === "icon" ? styles.icon : styles[`${variant}-${size}`];
   return (
     <button
       className={stylesheet}

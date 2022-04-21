@@ -21,7 +21,7 @@ const Modal = (props: ModalProps): JSX.Element | null => {
             <FontAwesomeIcon icon={faTimes} />
           </Button>
         </div>
-        <div>{children}</div>
+        <div className={styles.body}>{children}</div>
         {footer && <div className={styles.footer}>{footer}</div>}
       </div>
     </div>
