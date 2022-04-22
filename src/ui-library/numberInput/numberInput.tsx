@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import NumberInputProps from "./interfaces";
+import NumberInputProps from './interfaces';
 
 const NumberInput: React.FunctionComponent<NumberInputProps> = (
   props
 ): JSX.Element => {
   const {
-    label = "",
+    label = '',
     name,
     value,
     onChange,
     required = false,
-    min = "",
-    max = "",
+    min = '',
+    max = '',
     readonly = false,
     step = 1,
   } = props;

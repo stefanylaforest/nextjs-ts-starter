@@ -1,10 +1,10 @@
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 
-import ModalProps from "./interfaces";
-import styles from "./modal.module.scss";
-import Button from "../button/button";
+import ModalProps from './interfaces';
+import styles from './modal.module.scss';
+import Button from '../button/button';
 
 const Modal = (props: ModalProps): JSX.Element | null => {
   const { show, closeModal, title, children, footer = undefined } = props;
@@ -17,7 +17,7 @@ const Modal = (props: ModalProps): JSX.Element | null => {
       <div className={styles.modalWrapper}>
         <div className={styles.header}>
           {title && <h2>{title}</h2>}
-          <Button variant={"icon"} onClick={closeModal}>
+          <Button variant={'icon'} onClick={closeModal}>
             <FontAwesomeIcon icon={faTimes} />
           </Button>
         </div>

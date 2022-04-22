@@ -1,9 +1,9 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-import CheckboxInputProps from "./interfaces";
-import styles from "./checkboxInput.module.scss";
+import CheckboxInputProps from './interfaces';
+import styles from './checkboxInput.module.scss';
 
 const CheckboxInput = (props: CheckboxInputProps): JSX.Element => {
   const { name, label, onChange, checked = false, disabled = false } = props;

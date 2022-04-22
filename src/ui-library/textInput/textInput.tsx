@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import TextInputProps from "./interfaces";
+import TextInputProps from './interfaces';
 
 const TextInput = (props: TextInputProps): JSX.Element => {
   const {
-    label = "",
+    label = '',
     required = false,
     name,
     onChange,
-    placeholder = "",
+    placeholder = '',
     value,
     maxLength = 80,
     readonly = false,
@@ -19,7 +19,7 @@ const TextInput = (props: TextInputProps): JSX.Element => {
       {label}
       {required && <>&nbsp;*</>}
       <input
-        type={"text"}
+        type={'text'}
         name={name}
         onChange={onChange}
         required={required}
