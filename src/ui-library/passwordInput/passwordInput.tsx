@@ -1,17 +1,17 @@
-import React, { useState, useId } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useId } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
-import PasswordInputProps from "./interfaces";
-import styles from "./passwordInput.module.scss";
-import Button from "../button/button";
+import PasswordInputProps from './interfaces';
+import styles from './passwordInput.module.scss';
+import Button from '../button/button';
 
 const PasswordInput = (props: PasswordInputProps): JSX.Element => {
   const {
-    label = "",
+    label = '',
     name,
     onChange,
-    placeholder = "",
+    placeholder = '',
     value,
     requiredSymbol = false,
   } = props;
@@ -23,8 +23,8 @@ const PasswordInput = (props: PasswordInputProps): JSX.Element => {
   };
 
   const icon = showPassword ? faEyeSlash : faEye;
-  const inputType = showPassword ? "text" : "password";
-  const accessibilityText = showPassword ? "Hide Password" : "Show Password";
+  const inputType = showPassword ? 'text' : 'password';
+  const accessibilityText = showPassword ? 'Hide Password' : 'Show Password';
 
   return (
     <div className={styles.container}>
@@ -44,7 +44,7 @@ const PasswordInput = (props: PasswordInputProps): JSX.Element => {
 
       <Button
         onClick={toggleShowPassword}
-        variant={"icon"}
+        variant={'icon'}
         ariaLabel={accessibilityText}
       >
         <FontAwesomeIcon icon={icon} />

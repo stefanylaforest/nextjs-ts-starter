@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import styles from "./demo.module.scss";
+import styles from './demo.module.scss';
 
-import TextInput from "../../ui-library/textInput/textInput";
-import NumberInput from "../../ui-library/numberInput/numberInput";
-import Select from "../../ui-library/select/select";
-import CheckboxInput from "../../ui-library/checkboxInput/checkboxInput";
-import Card from "../../ui-library/card/card";
-import Button from "../../ui-library/button/button";
-import Modal from "../../ui-library/modal/modal";
-import PasswordInput from "../../ui-library/passwordInput/passwordInput";
+import TextInput from '../../ui-library/textInput/textInput';
+import NumberInput from '../../ui-library/numberInput/numberInput';
+import Select from '../../ui-library/select/select';
+import CheckboxInput from '../../ui-library/checkboxInput/checkboxInput';
+import Card from '../../ui-library/card/card';
+import Button from '../../ui-library/button/button';
+import Modal from '../../ui-library/modal/modal';
+import PasswordInput from '../../ui-library/passwordInput/passwordInput';
 
 const Demo: React.FunctionComponent = (): JSX.Element => {
   const [formValues, setFormValues] = useState({
-    name: "",
-    age: "",
-    country: "",
+    name: '',
+    age: '',
+    country: '',
     developer: false,
     employed: true,
-    password: "",
+    password: '',
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -30,14 +30,14 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
   ): void => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
-    const val = type === "checkbox" ? checked : value;
+    const val = type === 'checkbox' ? checked : value;
     setFormValues({ ...formValues, [name]: val });
   };
 
-  const selectValues = ["canada", "usa"];
+  const selectValues = ['canada', 'usa'];
 
   const onClickHandler = (): void => {
-    alert("button clicked");
+    alert('button clicked');
   };
 
   return (
@@ -48,16 +48,16 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
         <div>
           <h3>Example of a Text Input</h3>
           <TextInput
-            label={"Name:"}
-            name={"name"}
+            label={'Name:'}
+            name={'name'}
             value={formValues.name}
             required={true}
             onChange={onInputChange}
           />
           <h3>Example of a Number Input</h3>
           <NumberInput
-            label={"Age:"}
-            name={"age"}
+            label={'Age:'}
+            name={'age'}
             value={formValues.age}
             onChange={onInputChange}
             min={0}
@@ -66,16 +66,16 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
         <div>
           <h3>Example of a Select Input</h3>
           <Select
-            label={"Select Country:"}
-            name={"country"}
+            label={'Select Country:'}
+            name={'country'}
             onChange={onInputChange}
             options={selectValues}
-            placeholder={"Select A Country"}
+            placeholder={'Select A Country'}
             required={true}
           />
           <h3>Example of a Checkbox Input</h3>
           <CheckboxInput
-            name={"developer"}
+            name={'developer'}
             label={
               <>
                 I am a <span className="bold">not</span> a Developer
@@ -86,8 +86,8 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
             disabled={true}
           />
           <CheckboxInput
-            name={"employed"}
-            label={"I am currently employed."}
+            name={'employed'}
+            label={'I am currently employed.'}
             checked={formValues.employed}
             onChange={onInputChange}
           />
@@ -96,9 +96,9 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
       <div className={styles.maxWidth}>
         <h3>Password Input</h3>
         <PasswordInput
-          name={"password"}
+          name={'password'}
           value={formValues.password}
-          label={"Enter Your Password"}
+          label={'Enter Your Password'}
           onChange={onInputChange}
         />
       </div>
@@ -134,31 +134,31 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
       </div>
       <div>
         <h2>Buttons</h2>
-        <Button variant={"primary"} onClick={onClickHandler}>
+        <Button variant={'primary'} onClick={onClickHandler}>
           Primary Button
         </Button>
-        <Button variant={"secondary"} onClick={onClickHandler}>
+        <Button variant={'secondary'} onClick={onClickHandler}>
           <FontAwesomeIcon icon={faShoppingCart} />
           Secondary Button
         </Button>
-        <Button variant={"secondary"} onClick={onClickHandler} disabled={true}>
+        <Button variant={'secondary'} onClick={onClickHandler} disabled={true}>
           Disabled Button
         </Button>
       </div>
       <div>
         <h2>Modal Demo</h2>
-        <Button variant={"primary"} onClick={() => setShowModal(true)}>
+        <Button variant={'primary'} onClick={() => setShowModal(true)}>
           Click To See Modal
         </Button>
         <Modal
           show={showModal}
           closeModal={() => setShowModal(false)}
-          title={"Modal Title"}
+          title={'Modal Title'}
           footer={
             <Button
-              variant={"primary"}
+              variant={'primary'}
               onClick={() => setShowModal(false)}
-              size={"small"}
+              size={'small'}
             >
               Close
             </Button>
