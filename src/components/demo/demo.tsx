@@ -12,9 +12,10 @@ import Card from '../../ui-library/card/card';
 import Button from '../../ui-library/button/button';
 import Modal from '../../ui-library/modal/modal';
 import PasswordInput from '../../ui-library/passwordInput/passwordInput';
+import { FormValues } from './interfaces';
 
 const Demo: React.FunctionComponent = (): JSX.Element => {
-  const [formValues, setFormValues] = useState({
+  const [formValues, setFormValues] = useState<FormValues>({
     name: '',
     age: '',
     country: '',
@@ -23,7 +24,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
     password: '',
   });
 
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const onInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -34,7 +35,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
     setFormValues({ ...formValues, [name]: val });
   };
 
-  const selectValues = ['canada', 'usa'];
+  const selectValues: string[] = ['canada', 'usa'];
 
   const onClickHandler = (): void => {
     alert('button clicked');
@@ -160,7 +161,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
               onClick={() => setShowModal(false)}
               size={'small'}
             >
-              Close
+              Close Modal
             </Button>
           }
         >
