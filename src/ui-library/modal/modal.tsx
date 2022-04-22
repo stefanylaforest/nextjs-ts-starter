@@ -13,11 +13,15 @@ const Modal = (props: ModalProps): JSX.Element | null => {
     return null;
   }
   return (
-    <div className={styles.bodyOverlay}>
+    <div className={styles.bodyOverlay} data-testid={'modal'}>
       <div className={styles.modalWrapper}>
         <div className={styles.header}>
           {title && <h2>{title}</h2>}
-          <Button variant={'icon'} onClick={closeModal}>
+          <Button
+            variant={'icon'}
+            onClick={closeModal}
+            ariaLabel={'Close Modal'}
+          >
             <FontAwesomeIcon icon={faTimes} />
           </Button>
         </div>
