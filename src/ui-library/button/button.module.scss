@@ -71,4 +71,8 @@
   &:hover {
     color: $secondary;
   }
+
+  &:disabled {
+    color: $medium-grey;
+  }
 }

@@ -65,10 +65,10 @@ textarea {
   border-radius: $borderRadius;
   padding: 8px 25px 8px 10px;
   border: 1px solid $primary;
-  background-color: transparent;
-  max-width: 300px;
+  background-color: $white;
   width: 100%;
-  &:focus {
+  &:focus,
+  &:active {
     outline: transparent;
     box-shadow: $inputBoxshadow;
     background-color: $white;

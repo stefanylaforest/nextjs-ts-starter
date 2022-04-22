@@ -11,6 +11,7 @@ import CheckboxInput from "../../ui-library/checkboxInput/checkboxInput";
 import Card from "../../ui-library/card/card";
 import Button from "../../ui-library/button/button";
 import Modal from "../../ui-library/modal/modal";
+import PasswordInput from "../../ui-library/passwordInput/passwordInput";
 
 const Demo: React.FunctionComponent = (): JSX.Element => {
   const [formValues, setFormValues] = useState({
@@ -19,7 +20,10 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
     country: "",
     developer: false,
     employed: true,
+    password: "",
+    passwordCheck: "",
   });
+
   const [showModal, setShowModal] = useState(false);
 
   const onInputChange = (
@@ -89,6 +93,21 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
             onChange={onInputChange}
           />
         </div>
+      </div>
+      <div className={styles.maxWidth}>
+        <h3>Password Input</h3>
+        <PasswordInput
+          name={"password"}
+          value={formValues.password}
+          label={"Enter Your Password"}
+          onChange={onInputChange}
+        />
+        <PasswordInput
+          name={"passwordCheck"}
+          value={formValues.passwordCheck}
+          label={"Re-enter Your Password"}
+          onChange={onInputChange}
+        />
       </div>
       <div>
         <h2>Card</h2>
