@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,10 +13,10 @@ const PasswordInput = (props: PasswordInputProps): JSX.Element => {
     onChange,
     placeholder = "",
     value,
-    maxLength = 80,
     requiredSymbol = false,
   } = props;
   const [showPassword, setShowPassword] = useState(false);
+  const password = useId();
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -24,24 +24,29 @@ const PasswordInput = (props: PasswordInputProps): JSX.Element => {
 
   const icon = showPassword ? faEyeSlash : faEye;
   const inputType = showPassword ? "text" : "password";
+  const accessibilityText = showPassword ? "Hide Password" : "Show Password";
 
   return (
     <div className={styles.container}>
-      <label>
+      <label htmlFor={password}>
         {label}
         {requiredSymbol && <>&nbsp;*</>}
         <input
+          id={password}
           type={inputType}
           name={name}
           onChange={onChange}
           placeholder={placeholder}
           value={value}
-          maxLength={maxLength}
           required
         />
       </label>
 
-      <Button onClick={toggleShowPassword} variant={"icon"}>
+      <Button
+        onClick={toggleShowPassword}
+        variant={"icon"}
+        ariaLabel={accessibilityText}
+      >
         <FontAwesomeIcon icon={icon} />
       </Button>
     </div>

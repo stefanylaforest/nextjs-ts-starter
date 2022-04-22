@@ -11,6 +11,7 @@ const Button = (props: ButtonProps): JSX.Element => {
     disabled = false,
     type = "button",
     size = "large",
+    ariaLabel,
   } = props;
   const stylesheet =
     variant === "icon" ? styles.icon : styles[`${variant}-${size}`];
@@ -20,6 +21,7 @@ const Button = (props: ButtonProps): JSX.Element => {
       onClick={onClick}
       disabled={disabled}
       type={type}
+      aria-label={ariaLabel}
     >
       {children}
     </button>

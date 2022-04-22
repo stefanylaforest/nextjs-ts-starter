@@ -4,6 +4,5 @@ export default interface PasswordInputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label?: string;
   placeholder?: string;
-  maxLength?: number;
   requiredSymbol?: boolean;
 }

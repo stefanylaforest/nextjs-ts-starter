@@ -5,4 +5,5 @@ export default interface ButtonProps {
   type?: "submit" | "reset" | "button";
   disabled?: boolean;
   size?: "large" | "small";
+  ariaLabel?: string | undefined;
 }

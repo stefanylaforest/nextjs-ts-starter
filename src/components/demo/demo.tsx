@@ -21,6 +21,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
     developer: false,
     employed: true,
     password: "",
+    passwordCheck: "",
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -99,6 +100,12 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
           name={"password"}
           value={formValues.password}
           label={"Enter Your Password"}
+          onChange={onInputChange}
+        />
+        <PasswordInput
+          name={"passwordCheck"}
+          value={formValues.passwordCheck}
+          label={"Re-enter Your Password"}
           onChange={onInputChange}
         />
       </div>
