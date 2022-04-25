@@ -11,19 +11,18 @@ const Button = (props: ButtonProps): JSX.Element => {
     disabled,
     type = 'button',
     size = 'large',
-    ariaLabel,
   } = props;
-  const stylesheet =
-    variant === 'icon' ? styles.icon : styles[`${variant}-${size}`];
 
-  const isDisabled = disabled ? { disabled: true } : {};
+  const stylesheet = variant === 'icon' ? styles.icon : styles[`${variant}-${size}`];
+  const hasAriaLabel = 'ariaLabel' in props ? props.ariaLabel : undefined;
+
   return (
     <button
       className={stylesheet}
       onClick={onClick}
       type={type}
-      aria-label={ariaLabel}
-      {...isDisabled}
+      aria-label={hasAriaLabel}
+      disabled={disabled}
     >
       {children}
     </button>

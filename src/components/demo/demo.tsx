@@ -26,9 +26,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
 
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const onInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ): void => {
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
     const val = type === 'checkbox' ? checked : value;
@@ -156,18 +154,14 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
           closeModal={() => setShowModal(false)}
           title={'Modal Title'}
           footer={
-            <Button
-              variant={'primary'}
-              onClick={() => setShowModal(false)}
-              size={'small'}
-            >
+            <Button variant={'primary'} onClick={() => setShowModal(false)} size={'small'}>
               Close Modal
             </Button>
           }
         >
           <p>
-            Modal Body Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Modal Body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </Modal>
       </div>
