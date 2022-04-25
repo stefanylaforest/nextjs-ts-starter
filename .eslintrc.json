@@ -4,7 +4,8 @@
   "rules": {
     "@next/next/no-img-element": "off",
     "object-curly-spacing": ["error", "always"],
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "operator-linebreak": ["error", "after"]
   },
   "env": {
     "es6": true,
