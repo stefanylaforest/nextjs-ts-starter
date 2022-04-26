@@ -9,7 +9,7 @@ const CheckboxInput = (props: CheckboxInputProps): JSX.Element => {
   const { name, label, onChange, checked = false, disabled = false } = props;
   return (
     <div className={styles.container}>
-      <label className={styles.checkboxContainer}>
+      <label className={styles.checkboxContainer} data-testid="label">
         {checked && <FontAwesomeIcon icon={faCheck} />}
         <input
           type="checkbox"

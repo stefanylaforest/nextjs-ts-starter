@@ -15,9 +15,10 @@ it('it should render a input of type password on render', () => {
       onChange={() => console.log('test')}
     />
   );
-  expect(
-    screen.getByLabelText('Enter Your Password', { selector: 'input' })
-  ).toHaveAttribute('type', 'password');
+  expect(screen.getByLabelText('Enter Your Password', { selector: 'input' })).toHaveAttribute(
+    'type',
+    'password'
+  );
 });
 
 it('it should render an input of type text if the eye icon is clicked', async () => {
@@ -33,9 +34,10 @@ it('it should render an input of type text if the eye icon is clicked', async ()
     name: 'Show Password',
   });
   await userEvent.click(showPasswordButton);
-  expect(
-    screen.getByLabelText('Enter Your Password', { selector: 'input' })
-  ).toHaveAttribute('type', 'text');
+  expect(screen.getByLabelText('Enter Your Password', { selector: 'input' })).toHaveAttribute(
+    'type',
+    'text'
+  );
 });
 
 it('it should hide password on click of eye icon/hide password button', async () => {
@@ -52,9 +54,10 @@ it('it should hide password on click of eye icon/hide password button', async ()
   });
   await userEvent.click(showPasswordButton);
   await userEvent.click(showPasswordButton);
-  expect(
-    screen.getByLabelText('Enter Your Password', { selector: 'input' })
-  ).toHaveAttribute('type', 'password');
+  expect(screen.getByLabelText('Enter Your Password', { selector: 'input' })).toHaveAttribute(
+    'type',
+    'password'
+  );
 });
 
 it('it should render a label', async () => {

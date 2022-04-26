@@ -2,20 +2,20 @@ import React from 'react';
 
 import NumberInputProps from './interfaces';
 
-const NumberInput: React.FunctionComponent<NumberInputProps> = (
-  props
-): JSX.Element => {
+const NumberInput = (props: NumberInputProps): JSX.Element => {
   const {
-    label = '',
+    label,
     name,
     value,
     onChange,
+    placeholder,
     required = false,
     min = '',
     max = '',
     readonly = false,
     step = 1,
   } = props;
+
   return (
     <label>
       {label}
@@ -30,6 +30,7 @@ const NumberInput: React.FunctionComponent<NumberInputProps> = (
         max={max}
         readOnly={readonly}
         step={step}
+        placeholder={placeholder}
       />
     </label>
   );
