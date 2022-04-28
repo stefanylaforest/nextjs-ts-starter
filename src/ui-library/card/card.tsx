@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import CardProps from './interfaces';
 import CardProps from './interfaces';
 import styles from './card.module.scss';
 
