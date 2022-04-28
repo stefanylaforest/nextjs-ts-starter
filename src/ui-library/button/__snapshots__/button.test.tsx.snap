@@ -23,3 +23,13 @@ exports[`Icon Only Button It should render without crashing 1`] = `
   </svg>
 </button>
 `;
+
+exports[`primary or secondary button It should render without crashing 1`] = `
+<button
+  class="secondary-large"
+  disabled=""
+  type="button"
+>
+  Secondary Button
+</button>
+`;
