@@ -8,21 +8,31 @@ afterEach(cleanup);
 
 describe('Modal', (): void => {
   it('should render without crashing ', (): void => {
-    render(<Modal show={true} closeModal={() => {}} />);
+    render(
+      <Modal show={true} closeModal={() => {}}>
+        <p>A message</p>
+      </Modal>
+    );
     expect(screen.getByTestId('modal')).toMatchSnapshot();
   });
 
   it('should render a close button', (): void => {
-    render(<Modal show={true} closeModal={() => {}} />);
-    expect(
-      screen.getByRole('button', { name: 'Close Modal' })
-    ).toBeInTheDocument();
+    render(
+      <Modal show={true} closeModal={() => {}}>
+        <p>A message</p>
+      </Modal>
+    );
+    expect(screen.getByRole('button', { name: 'Close Modal' })).toBeInTheDocument();
   });
 
   it('should open if show prop is true', async () => {
     const Wrapper = () => {
       const [showModal, setShowModal] = useState<boolean>(true);
-      return <Modal show={showModal} closeModal={() => setShowModal(false)} />;
+      return (
+        <Modal show={showModal} closeModal={() => setShowModal(false)}>
+          <p>A message</p>
+        </Modal>
+      );
     };
     render(<Wrapper />);
     expect(screen.getByTestId('modal')).toBeInTheDocument();
@@ -31,7 +41,11 @@ describe('Modal', (): void => {
   it('should close modal on click of close button', async () => {
     const Wrapper = () => {
       const [showModal, setShowModal] = useState<boolean>(true);
-      return <Modal show={showModal} closeModal={() => setShowModal(false)} />;
+      return (
+        <Modal show={showModal} closeModal={() => setShowModal(false)}>
+          <p>A message</p>
+        </Modal>
+      );
     };
     render(<Wrapper />);
     const modal = screen.getByTestId('modal');

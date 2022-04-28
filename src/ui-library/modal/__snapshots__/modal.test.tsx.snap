@@ -35,7 +35,11 @@ exports[`Modal should render without crashing  1`] = `
     </div>
     <div
       class="body"
-    />
+    >
+      <p>
+        A message
+      </p>
+    </div>
   </div>
 </div>
 `;
