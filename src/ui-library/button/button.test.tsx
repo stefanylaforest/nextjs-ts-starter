@@ -1,16 +1,17 @@
 import React from 'react';
-import { screen, render, cleanup } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import Button from './button';
+import userEvent from '@testing-library/user-event';
 
-afterEach(cleanup);
+const onClick = jest.fn();
 
-describe('Icon Only Button', (): void => {
+describe('Icon Only Button', () => {
   it('It should have an aria-label attribute ', () => {
     render(
-      <Button onClick={() => console.log('clicked')} ariaLabel={'Go to Cart'} variant={'icon'}>
+      <Button onClick={onClick} ariaLabel={'Go to Cart'} variant={'icon'}>
         <FontAwesomeIcon icon={faShoppingCart} />
       </Button>
     );
@@ -19,7 +20,7 @@ describe('Icon Only Button', (): void => {
 
   it('It should render without crashing', () => {
     render(
-      <Button onClick={() => console.log('clicked')} ariaLabel={'Go to Cart'} variant={'icon'}>
+      <Button onClick={onClick} ariaLabel={'Go to Cart'} variant={'icon'}>
         <FontAwesomeIcon icon={faShoppingCart} />
       </Button>
     );
@@ -27,7 +28,7 @@ describe('Icon Only Button', (): void => {
   });
 });
 
-describe('primary or secondary button', (): void => {
+describe('primary or secondary button', () => {
   it('should render a large primary button if no variant or size is defined', () => {
     render(
       <Button variant={'primary'} onClick={() => console.log('clicked')}>
@@ -39,10 +40,20 @@ describe('primary or secondary button', (): void => {
 
   it('should be disabled', async () => {
     render(
-      <Button onClick={() => console.log('clicked')} disabled variant={'secondary'}>
+      <Button onClick={onClick} disabled={true} variant={'secondary'}>
         Secondary Button
       </Button>
     );
-    expect(await screen.findByRole('button', { name: 'Secondary Button' })).toBeDisabled();
+    userEvent.click(await screen.findByRole('button', { name: 'Secondary Button' }));
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('It should render without crashing', () => {
+    render(
+      <Button onClick={onClick} disabled={true} variant={'secondary'}>
+        Secondary Button
+      </Button>
+    );
+    expect(screen.getByRole('button', { name: 'Secondary Button' })).toMatchSnapshot();
   });
 });
