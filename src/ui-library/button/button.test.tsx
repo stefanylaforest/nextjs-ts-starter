@@ -1,7 +1,7 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Button from './button';
 import userEvent from '@testing-library/user-event';
@@ -9,6 +9,15 @@ import userEvent from '@testing-library/user-event';
 const onClick = jest.fn();
 
 describe('Icon Only Button', () => {
+  it('should render the variant "icon" ', () => {
+    render(
+      <Button onClick={onClick} ariaLabel={'Go back'} variant={'icon'}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </Button>
+    );
+    expect(screen.getByRole('button', { name: 'Go back' })).toHaveClass('icon');
+  });
+
   it('It should have an aria-label attribute ', () => {
     render(
       <Button onClick={onClick} ariaLabel={'Go to Cart'} variant={'icon'}>
@@ -29,9 +38,18 @@ describe('Icon Only Button', () => {
 });
 
 describe('primary or secondary button', () => {
-  it('should render a large primary button if no variant or size is defined', () => {
+  it('should render be a primary button', () => {
     render(
-      <Button variant={'primary'} onClick={() => console.log('clicked')}>
+      <Button variant={'primary'} onClick={onClick}>
+        A primary button
+      </Button>
+    );
+    expect(screen.getByRole('button', { name: 'A primary button' })).toMatchSnapshot();
+  });
+
+  it('should render a large button if no size is defined', () => {
+    render(
+      <Button variant={'primary'} onClick={onClick}>
         Primary Button
       </Button>
     );
@@ -39,12 +57,12 @@ describe('primary or secondary button', () => {
   });
 
   it('should be disabled', async () => {
-    render(
-      <Button onClick={onClick} disabled={true} variant={'secondary'}>
-        Secondary Button
+    const { container } = render(
+      <Button onClick={onClick} variant={'primary'} disabled>
+        Submit
       </Button>
     );
-    userEvent.click(await screen.findByRole('button', { name: 'Secondary Button' }));
+    await userEvent.click(container);
     expect(onClick).not.toHaveBeenCalled();
   });
 

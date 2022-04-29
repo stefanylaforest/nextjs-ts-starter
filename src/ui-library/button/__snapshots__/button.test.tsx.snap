@@ -33,3 +33,12 @@ exports[`primary or secondary button It should render without crashing 1`] = `
   Secondary Button
 </button>
 `;
+
+exports[`primary or secondary button should render be a primary button 1`] = `
+<button
+  class="primary-large"
+  type="button"
+>
+  A primary button
+</button>
+`;
