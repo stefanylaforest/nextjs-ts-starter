@@ -38,4 +38,31 @@ describe('Select input', () => {
     expect((screen.getByRole('option', { name: 'b' }) as HTMLOptionElement).selected).toBe(true);
     expect((screen.getByRole('option', { name: 'c' }) as HTMLOptionElement).selected).toBe(false);
   });
+
+  it('should render a label', () => {
+    render(
+      <Select
+        name={'choose'}
+        label={'Please select an option'}
+        options={['1a', '2a', '3a']}
+        onChange={jest.fn()}
+        defaultValue={'3a'}
+      />
+    );
+    expect(screen.getByLabelText('Please select an option')).toBeInTheDocument();
+  });
+
+  it('should render a required symbol', () => {
+    render(
+      <Select
+        name={'choose'}
+        label={'Please select an option'}
+        options={['1a', '2a', '3a']}
+        onChange={jest.fn()}
+        defaultValue={'3a'}
+        required={true}
+      />
+    );
+    expect(screen.getByLabelText('Please select an option *')).toBeInTheDocument();
+  });
 });

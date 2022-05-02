@@ -4,9 +4,11 @@ exports[`Modal should render without crashing  1`] = `
 <div
   class="bodyOverlay"
   data-testid="modal"
+  role="button"
 >
   <div
     class="modalWrapper"
+    role="dialog"
   >
     <div
       class="header"
