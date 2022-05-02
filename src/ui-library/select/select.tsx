@@ -24,12 +24,7 @@ const Select = (props: SelectProps): JSX.Element => {
         </label>
       )}
       <div className={styles.arrowSelect}>
-        <select
-          onChange={onChange}
-          name={name}
-          required={required}
-          value={defaultValue}
-        >
+        <select onChange={onChange} name={name} required={required} value={defaultValue} id={name}>
           {placeholder && <option value="">{placeholder}</option>}
           {options.map((option) => {
             return (

@@ -7,14 +7,7 @@ import styles from './passwordInput.module.scss';
 import Button from '../button/button';
 
 const PasswordInput = (props: PasswordInputProps): JSX.Element => {
-  const {
-    label = '',
-    name,
-    onChange,
-    placeholder = '',
-    value,
-    requiredSymbol = false,
-  } = props;
+  const { label, name, onChange, placeholder, value, requiredSymbol = true } = props;
   const [showPassword, setShowPassword] = useState(false);
   const password = useId();
 
@@ -22,7 +15,7 @@ const PasswordInput = (props: PasswordInputProps): JSX.Element => {
     setShowPassword(!showPassword);
   };
 
-  const icon = showPassword ? faEyeSlash : faEye;
+  const icon = showPassword ? faEye : faEyeSlash;
   const inputType = showPassword ? 'text' : 'password';
   const accessibilityText = showPassword ? 'Hide Password' : 'Show Password';
 
@@ -30,7 +23,7 @@ const PasswordInput = (props: PasswordInputProps): JSX.Element => {
     <div className={styles.container}>
       <label htmlFor={password}>
         {label}
-        {requiredSymbol && <>&nbsp;*</>}
+        {label && requiredSymbol && <>&nbsp;*</>}
         <input
           id={password}
           type={inputType}
@@ -42,11 +35,7 @@ const PasswordInput = (props: PasswordInputProps): JSX.Element => {
         />
       </label>
 
-      <Button
-        onClick={toggleShowPassword}
-        variant={'icon'}
-        ariaLabel={accessibilityText}
-      >
+      <Button onClick={toggleShowPassword} variant={'icon'} ariaLabel={accessibilityText}>
         <FontAwesomeIcon icon={icon} />
       </Button>
     </div>

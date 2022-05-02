@@ -21,7 +21,8 @@
   }
 
   input {
-    display: none;
+    opacity: 0;
+    margin-bottom: -20px;
 
     &:checked + span {
       &:before {
@@ -58,7 +59,7 @@
   display: inline-flex;
   &:before {
     margin-right: 10px;
-    content: "";
+    content: '';
     background-color: transparent;
     border-radius: $borderRadius;
     border: 1px solid $primary;
@@ -66,4 +67,9 @@
     width: 21px;
     min-width: 21px;
   }
+}
+
+.checkboxContainer input:focus + .checkboxLabel::before {
+  box-shadow: $inputBoxshadow;
+  outline: 3px solid transparent; /* For Windows high contrast mode. */
 }

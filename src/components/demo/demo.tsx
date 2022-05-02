@@ -23,7 +23,6 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
     employed: true,
     password: '',
   });
-
   const [showModal, setShowModal] = useState<boolean>(false);
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
@@ -35,8 +34,8 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
 
   const selectValues: string[] = ['canada', 'usa'];
 
-  const onClickHandler = (): void => {
-    alert('button clicked');
+  const onClickHandler = () => {
+    console.log('clicked');
   };
 
   return (
