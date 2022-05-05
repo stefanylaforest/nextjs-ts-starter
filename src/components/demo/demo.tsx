@@ -18,21 +18,25 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
   const [formValues, setFormValues] = useState<FormValues>({
     name: '',
     age: '',
-    country: '',
+    country: 'mexico',
     developer: false,
     employed: true,
     password: '',
   });
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const onInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
     const val = type === 'checkbox' ? checked : value;
     setFormValues({ ...formValues, [name]: val });
   };
 
-  const selectValues: string[] = ['canada', 'usa'];
+  const onSelectChange = (value: string) => {
+    setFormValues({ ...formValues, country: value });
+  };
+
+  const selectValues: string[] = ['canada', 'usa', 'mexico'];
 
   const onClickHandler = () => {
     console.log('clicked');
@@ -65,11 +69,11 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
           <h3>Example of a Select Input</h3>
           <Select
             label={'Select Country:'}
-            name={'country'}
-            onChange={onInputChange}
+            onChange={onSelectChange}
             options={selectValues}
-            placeholder={'Select A Country'}
+            // placeholder={'Select A Country'}
             required={true}
+            defaultValue={formValues.country}
           />
           <h3>Example of a Checkbox Input</h3>
           <CheckboxInput

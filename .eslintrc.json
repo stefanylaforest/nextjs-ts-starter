@@ -5,7 +5,8 @@
     "@next/next/no-img-element": "off",
     "object-curly-spacing": ["error", "always"],
     "quotes": ["error", "single"],
-    "operator-linebreak": ["error", "after"]
+    "operator-linebreak": ["error", "after"],
+    "react-hooks/exhaustive-deps": "off"
   },
   "env": {
     "es6": true,
