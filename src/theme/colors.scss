@@ -1,29 +1,21 @@
-// fonts
-$main-font: 'DM Sans', sans-serif;
-
-// colors
+// basics
 $white: #ffffff;
 $black: #2e2e2e;
-$success: #2e8b57;
-$error: #d94545;
+$sand: #f9f8f3;
 $light-grey: #f9f9f9;
 $medium-grey: #d3d3d3;
 $darker-grey: #b8b8b8;
 $darkest-grey: #606060;
+
+// alerts
+$success: #2e8b57;
+$warning: #eca918;
+$error: #d94545;
+
+// brand
 $primary: #0d6a7b;
 $secondary: #37beb0;
 $paleSecondary: #37beb082;
 $accentColor: #e56b54;
 $secondary20opacity: rgb(55 190 176 / 20%);
 $secondary10opacity: rgb(55 190 176 / 10%);
-
-// other
-$inputBoxshadow: 0 0 0 4px rgb(55 190 176 / 20%);
-$cardBoxShadow: 0 15px 30px #00000035;
-
-$borderRadius: 5px;
-
-// z-indexes
-$selectIndex: 97;
-$modalIndex: 99;
-$modalOverlayIndex: 98;
