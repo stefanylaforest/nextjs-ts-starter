@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 
 import ButtonProps from './interfaces';
 import styles from './button.module.scss';
@@ -6,7 +7,7 @@ import styles from './button.module.scss';
 const Button = (props: ButtonProps) => {
   const { variant, children, onClick, disabled, type = 'button', size = 'large' } = props;
 
-  const stylesheet = variant === 'icon' ? styles.icon : styles[`${variant}-${size}`];
+  const stylesheet = variant === 'icon' ? styles.icon : cx(styles[variant], styles[size]);
   const hasAriaLabel = 'ariaLabel' in props ? props.ariaLabel : undefined;
   return (
     <button

@@ -26,19 +26,10 @@ exports[`Icon Only Button It should render without crashing 1`] = `
 
 exports[`primary or secondary button It should render without crashing 1`] = `
 <button
-  class="secondary-large"
+  class="secondary large"
   disabled=""
   type="button"
 >
   Secondary Button
-</button>
-`;
-
-exports[`primary or secondary button should render be a primary button 1`] = `
-<button
-  class="primary-large"
-  type="button"
->
-  A primary button
 </button>
 `;

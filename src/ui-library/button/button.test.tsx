@@ -44,7 +44,7 @@ describe('primary or secondary button', () => {
         A primary button
       </Button>
     );
-    expect(screen.getByRole('button', { name: 'A primary button' })).toMatchSnapshot();
+    expect(screen.getByRole('button', { name: 'A primary button' })).toHaveClass('primary');
   });
 
   it('should render a large button if no size is defined', () => {
@@ -53,7 +53,16 @@ describe('primary or secondary button', () => {
         Primary Button
       </Button>
     );
-    expect(screen.getByRole('button', { name: 'Primary Button' })).toHaveClass('primary-large');
+    expect(screen.getByRole('button', { name: 'Primary Button' })).toHaveClass('large');
+  });
+
+  it('should render be a secondary button', () => {
+    render(
+      <Button variant={'secondary'} onClick={onClick}>
+        A secondary button
+      </Button>
+    );
+    expect(screen.getByRole('button', { name: 'A secondary button' })).toHaveClass('secondary');
   });
 
   it('should be disabled', async () => {
@@ -64,6 +73,17 @@ describe('primary or secondary button', () => {
     );
     await userEvent.click(container);
     expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('should call the on click', async () => {
+    render(
+      <Button onClick={onClick} variant={'primary'}>
+        Submit
+      </Button>
+    );
+    const btn = screen.getByRole('button', { name: 'Submit' });
+    await userEvent.click(btn);
+    expect(onClick).toHaveBeenCalled();
   });
 
   it('It should render without crashing', () => {

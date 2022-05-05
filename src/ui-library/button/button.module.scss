@@ -1,7 +1,17 @@
-.primary-large,
-.primary-small,
-.secondary-large,
-.secondary-small {
+.primary {
+  background-color: $primary;
+  border: 1px solid $primary;
+  color: $white;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 1px solid $primary;
+  color: $primary;
+}
+
+.primary,
+.secondary {
   margin: 5px;
   border-radius: $borderRadius;
   font-size: 16px;
@@ -33,27 +43,11 @@
   }
 }
 
-.primary-large,
-.primary-small {
-  background-color: $primary;
-  border: 1px solid $primary;
-  color: $white;
-}
-
-.secondary-large,
-.secondary-small {
-  background-color: transparent;
-  border: 1px solid $primary;
-  color: $primary;
-}
-
-.primary-large,
-.secondary-large {
+.large {
   padding: 20px;
 }
 
-.primary-small,
-.secondary-small {
+.small {
   padding: 10px 20px;
 }
 

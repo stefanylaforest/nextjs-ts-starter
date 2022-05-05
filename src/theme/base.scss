@@ -75,7 +75,7 @@ textarea {
   &:focus,
   &:active {
     outline: transparent;
-    box-shadow: $inputBoxshadow;
+    box-shadow: $inputActive;
     background-color: $white;
   }
 }
