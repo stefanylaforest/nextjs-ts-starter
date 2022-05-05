@@ -1,7 +1,6 @@
 export default interface SelectProps {
-  name: string;
   options: string[];
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: (value: string) => void;
   placeholder?: string;
   required?: boolean;
   label?: string;

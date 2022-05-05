@@ -1,13 +1,19 @@
 .arrowSelect {
+  cursor: pointer;
   position: relative;
   max-width: 300px;
+  padding: 8px 25px 8px 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $white;
+  border-radius: $borderRadius;
+  border: 1px solid $primary;
+  margin-top: 8px;
+  min-height: 39px;
 
-  select {
-    padding: 8px 25px 8px 10px;
-    -webkit-appearance: none;
-    appearance: none;
-    position: relative;
+  span {
     text-overflow: ellipsis;
+    overflow-x: hidden;
     white-space: nowrap;
   }
 
@@ -15,9 +21,52 @@
     position: absolute;
     width: 11px;
     right: 10px;
-    top: 58%;
+    top: 50%;
     transform: translate(0, -50%);
     z-index: 1;
     pointer-events: none;
   }
+  &:focus,
+  &:active {
+    outline: transparent;
+    box-shadow: $inputBoxshadow;
+    background-color: $white;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  background: $white;
+  top: -17px;
+  border: 1px solid $primary;
+  border-radius: 6px;
+  z-index: $selectIndex;
+  width: calc(100% + 4px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  left: -2px;
+  [aria-selected='true'] {
+    background-color: $secondary20opacity;
+  }
+
+  li {
+    border-radius: inherit;
+    cursor: pointer;
+    padding: 8px 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:focus,
+    &:hover {
+      background-color: $secondary10opacity;
+    }
+  }
+}
+
+.selected {
+  font-weight: bold;
 }
