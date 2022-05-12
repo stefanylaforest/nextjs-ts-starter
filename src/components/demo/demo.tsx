@@ -77,7 +77,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
       <h1>UI Library Demo</h1>
       <h2>Form Components</h2>
       <div className={styles.section}>
-        <div>
+        <div className={styles.column}>
           <h3>Example of a Text Input</h3>
           <TextInput
             label={'Name:'}
@@ -95,7 +95,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
             min={0}
           />
         </div>
-        <div>
+        <div className={styles.column}>
           <h3>Example of a Select Input</h3>
           <Select
             label={'Select Country:'}
@@ -105,32 +105,32 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
             required={true}
             defaultValue={formValues.country}
           />
-          <h3>Example of a Checkbox Input</h3>
-          <CheckboxInput
-            name={'developer'}
-            label={
-              <>
-                I am a <span className="bold">not</span> a Developer
-              </>
-            }
-            checked={formValues.developer}
-            onChange={onInputChange}
-            disabled={true}
-          />
-          <CheckboxInput
-            name={'employed'}
-            label={'I am currently employed.'}
-            checked={formValues.employed}
+          <h3>Password Input</h3>
+          <PasswordInput
+            name={'password'}
+            value={formValues.password}
+            label={'Enter Your Password'}
             onChange={onInputChange}
           />
         </div>
       </div>
       <div className={styles.maxWidth}>
-        <h3>Password Input</h3>
-        <PasswordInput
-          name={'password'}
-          value={formValues.password}
-          label={'Enter Your Password'}
+        <h3>Example of a Checkbox Input</h3>
+        <CheckboxInput
+          name={'developer'}
+          label={
+            <>
+              I am a <span className="bold">not</span> a Developer
+            </>
+          }
+          checked={formValues.developer}
+          onChange={onInputChange}
+          disabled={true}
+        />
+        <CheckboxInput
+          name={'employed'}
+          label={'I am currently employed.'}
+          checked={formValues.employed}
           onChange={onInputChange}
         />
       </div>
