@@ -13,7 +13,7 @@
 .primary,
 .secondary {
   margin: 5px;
-  border-radius: $borderRadius;
+  border-radius: $radius5;
   font-size: 16px;
   cursor: pointer;
 
@@ -52,6 +52,8 @@
 }
 
 .icon {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   color: $black;
   border: none;

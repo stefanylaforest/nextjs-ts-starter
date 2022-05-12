@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,6 +13,8 @@ import Button from '../../ui-library/button/button';
 import Modal from '../../ui-library/modal/modal';
 import PasswordInput from '../../ui-library/passwordInput/passwordInput';
 import { FormValues } from './interfaces';
+import { ToastContext } from '../../ui-library/toast/ToastProvider';
+import { ToastContextType } from '../../ui-library/toast/interfaces';
 
 const Demo: React.FunctionComponent = (): JSX.Element => {
   const [formValues, setFormValues] = useState<FormValues>({
@@ -24,6 +26,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
     password: '',
   });
   const [showModal, setShowModal] = useState<boolean>(false);
+  const toast = useContext(ToastContext) as ToastContextType;
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -40,6 +43,33 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
 
   const onClickHandler = () => {
     console.log('clicked');
+  };
+
+  const handleWarning = () => {
+    toast.activate({
+      message: 'this is a warning toast',
+      type: 'warning',
+    });
+  };
+  const handleSuccess = () => {
+    toast.activate({
+      message: 'this is a success toast',
+      type: 'success',
+    });
+  };
+
+  const handleError = () => {
+    toast.activate({
+      message: 'this is a error toast',
+      type: 'error',
+    });
+  };
+
+  const handleInfo = () => {
+    toast.activate({
+      message: 'this is a info toast',
+      type: 'info',
+    });
   };
 
   return (
@@ -71,7 +101,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
             label={'Select Country:'}
             onChange={onSelectChange}
             options={selectValues}
-            // placeholder={'Select A Country'}
+            placeholder={'Select A Country'}
             required={true}
             defaultValue={formValues.country}
           />
@@ -167,6 +197,21 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
             tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </Modal>
+      </div>
+      <div>
+        <h2>Toast Demo</h2>
+        <Button variant={'primary'} onClick={handleInfo} disabled={false}>
+          Info Toast
+        </Button>
+        <Button variant={'primary'} onClick={handleWarning} disabled={false}>
+          Warning Toast
+        </Button>
+        <Button variant={'primary'} onClick={handleSuccess} disabled={false}>
+          Success Toast
+        </Button>
+        <Button variant={'primary'} onClick={handleError} disabled={false}>
+          Error Toast
+        </Button>
       </div>
     </div>
   );
