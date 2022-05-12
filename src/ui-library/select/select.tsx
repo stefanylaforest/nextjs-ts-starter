@@ -21,6 +21,7 @@ const Select = (props: SelectProps) => {
   const selectRef = useRef<HTMLDivElement | null>(null);
   const dropdownRef = useRef<HTMLUListElement | null>(null);
   const selectedValue = selected && selected !== '' ? selected : placeholder;
+  const ariaLabelledBy = label ? { 'aria-labelledby': 'listbox-label' } : {};
   let timeoutId: null | ReturnType<typeof setTimeout> = null;
 
   const openSelect = () => {
@@ -126,6 +127,7 @@ const Select = (props: SelectProps) => {
         onBlur={onBlurHandler}
         onFocus={onFocusHandler}
         data-testid="listbox-button"
+        {...ariaLabelledBy}
       >
         <span>{selectedValue}</span>
         <FontAwesomeIcon icon={faChevronDown} />
@@ -136,6 +138,7 @@ const Select = (props: SelectProps) => {
             ref={dropdownRef}
             onKeyDown={(e) => handleListKeydown(e)}
             className={styles.dropdown}
+            {...ariaLabelledBy}
           >
             {listOptions.map((option, index) => {
               return (

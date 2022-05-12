@@ -10,7 +10,6 @@ const CheckboxInput = (props: CheckboxInputProps) => {
   return (
     <div className={styles.container}>
       <label className={styles.checkboxContainer} data-testid="label">
-        {checked && <FontAwesomeIcon icon={faCheck} />}
         <input
           type="checkbox"
           name={name}
@@ -19,6 +18,7 @@ const CheckboxInput = (props: CheckboxInputProps) => {
           disabled={disabled}
         />
         <span className={styles.checkboxLabel}>
+          {checked && <FontAwesomeIcon icon={faCheck} />}
           <span>{label}</span>
         </span>
       </label>

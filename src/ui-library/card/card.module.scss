@@ -8,7 +8,7 @@
   min-width: 300px;
   max-width: 600px;
   padding: 25px;
-  border-radius: 20px;
+  border-radius: $radius20;
   border: 1px solid $medium-grey;
   background-color: $white;
   box-sizing: border-box;
@@ -18,7 +18,7 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: $borderRadius;
+    border-radius: $radius5;
   }
 
   &:hover {

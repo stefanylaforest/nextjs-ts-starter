@@ -1,8 +1,14 @@
 import type { AppProps } from 'next/app';
+
+import { ToastProvider } from '../ui-library/toast/ToastProvider';
 import '../theme/base.scss';
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
-  return <Component {...pageProps} />;
+  return (
+    <ToastProvider>
+      <Component {...pageProps} />
+    </ToastProvider>
+  );
 }
 
 export default App;
