@@ -13,6 +13,14 @@ npm run dev
 
 Go to `localhost:3000` to view the demo.
 
+## Tests
+
+To run tests, in your terminal, run:
+
+```
+npm test
+```
+
 ## Credit
 
-Icons used are from https://heroicons.com
+Icons: https://heroicons.com
