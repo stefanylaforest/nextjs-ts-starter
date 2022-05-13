@@ -170,7 +170,6 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
           Primary Button
         </Button>
         <Button variant={'secondary'} onClick={onClickHandler}>
-          <FontAwesomeIcon icon={faShoppingCart} />
           Secondary Button
         </Button>
         <Button variant={'secondary'} onClick={onClickHandler} disabled={true}>

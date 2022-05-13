@@ -23,7 +23,8 @@
     "**/*.ts",
     "**/*.tsx",
     "jest.config.js",
-    "jest-setup.ts"
+    "jest-setup.ts",
+    "webpack.config.js"
   ],
   "exclude": ["node_modules"]
 }

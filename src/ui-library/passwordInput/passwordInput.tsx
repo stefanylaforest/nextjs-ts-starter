@@ -1,10 +1,10 @@
 import React, { useState, useId } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
 import PasswordInputProps from './interfaces';
 import styles from './passwordInput.module.scss';
 import Button from '../button/button';
+import EyeSlashIcon from '../../icons/eye-slash.svg';
+import EyeIcon from '../../icons/eye.svg';
 
 const PasswordInput = (props: PasswordInputProps) => {
   const { label, name, onChange, placeholder, value, requiredSymbol = true } = props;
@@ -15,7 +15,6 @@ const PasswordInput = (props: PasswordInputProps) => {
     setShowPassword(!showPassword);
   };
 
-  const icon = showPassword ? faEye : faEyeSlash;
   const inputType = showPassword ? 'text' : 'password';
   const accessibilityText = showPassword ? 'Hide Password' : 'Show Password';
 
@@ -36,7 +35,7 @@ const PasswordInput = (props: PasswordInputProps) => {
       </label>
 
       <Button onClick={toggleShowPassword} variant={'icon'} ariaLabel={accessibilityText}>
-        <FontAwesomeIcon icon={icon} />
+        {showPassword ? <EyeIcon /> : <EyeSlashIcon />}
       </Button>
     </div>
   );

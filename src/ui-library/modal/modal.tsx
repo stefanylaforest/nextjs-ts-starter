@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FocusLock from 'react-focus-lock';
 
 import ModalProps from './interfaces';
 import styles from './modal.module.scss';
 import Button from '../button/button';
+import XIcon from '../../icons/x.svg';
 
 const Modal = (props: ModalProps) => {
   const { show, closeModal, title, children, footer = undefined } = props;
@@ -33,7 +32,7 @@ const Modal = (props: ModalProps) => {
           <div className={styles.header}>
             {title && <h2>{title}</h2>}
             <Button variant={'icon'} onClick={closeModal} ariaLabel={'Close Modal'}>
-              <FontAwesomeIcon icon={faTimes} />
+              <XIcon />
             </Button>
           </div>
           <div className={styles.body}>{children}</div>
