@@ -2,7 +2,7 @@ import React from 'react';
 
 import TextInputProps from './interfaces';
 
-const TextInput = (props: TextInputProps): JSX.Element => {
+const TextInput = (props: TextInputProps) => {
   const {
     label = '',
     required = false,
