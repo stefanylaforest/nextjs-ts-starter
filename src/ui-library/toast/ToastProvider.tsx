@@ -3,11 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 import Toast from './toast';
 import styles from './toast.module.scss';
-import { ToastWithId, ToastContextType, BasicToast } from './interfaces';
+import { ToastWithId, ToastContextType, BasicToast, ToastProviderProps } from './interfaces';
 
 const ToastContext = createContext<ToastContextType | null>(null);
 
-const ToastProvider = ({ children }: any) => {
+const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<ToastWithId[]>([]);
 
   const activate = ({ message, type = 'info' }: BasicToast) => {

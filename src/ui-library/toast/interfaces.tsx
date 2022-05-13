@@ -11,6 +11,10 @@ export interface ToastContextType {
   activate: ({ message, type }: BasicToast) => void;
 }
 
+export interface ToastProviderProps {
+  children: React.ReactNode;
+}
+
 export default interface ToastProps extends ToastWithId {
   remove: (key: string) => void;
 }
