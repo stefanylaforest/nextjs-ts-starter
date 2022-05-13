@@ -1,9 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import CheckboxInputProps from './interfaces';
 import styles from './checkboxInput.module.scss';
+import CheckIcon from '../../icons/check.svg';
 
 const CheckboxInput = (props: CheckboxInputProps) => {
   const { name, label, onChange, checked, disabled = false } = props;
@@ -18,7 +17,7 @@ const CheckboxInput = (props: CheckboxInputProps) => {
           disabled={disabled}
         />
         <span className={styles.checkboxLabel}>
-          {checked && <FontAwesomeIcon icon={faCheck} />}
+          {checked && <CheckIcon />}
           <span>{label}</span>
         </span>
       </label>

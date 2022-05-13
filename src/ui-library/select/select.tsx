@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import SelectProps from './interfaces';
 import styles from './select.module.scss';
+import ChevronDownIcon from '../../icons/chevron-down.svg';
+import ChevronUpIcon from '../../icons/chevron-up.svg';
 
 const Select = (props: SelectProps) => {
   const {
@@ -130,7 +130,7 @@ const Select = (props: SelectProps) => {
         {...ariaLabelledBy}
       >
         <span>{selectedValue}</span>
-        <FontAwesomeIcon icon={faChevronDown} />
+        {!showDropdown ? <ChevronDownIcon /> : <ChevronUpIcon />}
         {showDropdown && (
           <ul
             tabIndex={-1}

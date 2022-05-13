@@ -1,10 +1,9 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Button from './button';
 import userEvent from '@testing-library/user-event';
+import XIcon from '../../icons/x.svg';
 
 const onClick = jest.fn();
 
@@ -12,7 +11,7 @@ describe('Icon Only Button', () => {
   it('should render the variant "icon" ', () => {
     render(
       <Button onClick={onClick} ariaLabel={'Go back'} variant={'icon'}>
-        <FontAwesomeIcon icon={faChevronLeft} />
+        <XIcon />
       </Button>
     );
     expect(screen.getByRole('button', { name: 'Go back' })).toHaveClass('icon');
@@ -21,7 +20,7 @@ describe('Icon Only Button', () => {
   it('It should have an aria-label attribute ', () => {
     render(
       <Button onClick={onClick} ariaLabel={'Go to Cart'} variant={'icon'}>
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <XIcon />
       </Button>
     );
     expect(screen.getByRole('button', { name: 'Go to Cart' })).toHaveAttribute('aria-label');
@@ -30,7 +29,7 @@ describe('Icon Only Button', () => {
   it('It should render without crashing', () => {
     render(
       <Button onClick={onClick} ariaLabel={'Go to Cart'} variant={'icon'}>
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <XIcon />
       </Button>
     );
     expect(screen.getByRole('button', { name: 'Go to Cart' })).toMatchSnapshot();

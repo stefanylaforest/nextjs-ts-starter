@@ -18,7 +18,7 @@
 
   svg {
     position: absolute;
-    width: 11px;
+    width: 20px;
     right: 10px;
     top: 50%;
     transform: translate(0, -50%);
@@ -38,7 +38,7 @@
   list-style: none;
   padding: 0;
   background: $white;
-  top: -17px;
+  margin-top: 12px;
   border: 1px solid $primary;
   border-radius: 6px;
   z-index: $selectIndex;

@@ -22,8 +22,7 @@
       color: $white;
     }
     svg {
-      width: 20px;
-      height: 20px;
+      margin-left: 10px;
     }
   }
 }
@@ -31,6 +30,10 @@
 .rightCol {
   display: flex;
   overflow-wrap: anywhere;
+  svg {
+    width: 25px;
+    margin-right: 10px;
+  }
 }
 
 .error {
