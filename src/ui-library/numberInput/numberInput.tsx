@@ -2,7 +2,7 @@ import React from 'react';
 
 import NumberInputProps from './interfaces';
 
-const NumberInput = (props: NumberInputProps): JSX.Element => {
+const NumberInput = (props: NumberInputProps) => {
   const {
     label,
     name,

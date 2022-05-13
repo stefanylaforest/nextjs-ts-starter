@@ -6,7 +6,7 @@ import PasswordInputProps from './interfaces';
 import styles from './passwordInput.module.scss';
 import Button from '../button/button';
 
-const PasswordInput = (props: PasswordInputProps): JSX.Element => {
+const PasswordInput = (props: PasswordInputProps) => {
   const { label, name, onChange, placeholder, value, requiredSymbol = true } = props;
   const [showPassword, setShowPassword] = useState(false);
   const password = useId();

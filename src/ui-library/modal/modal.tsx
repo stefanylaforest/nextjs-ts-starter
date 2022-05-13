@@ -7,7 +7,7 @@ import ModalProps from './interfaces';
 import styles from './modal.module.scss';
 import Button from '../button/button';
 
-const Modal = (props: ModalProps): JSX.Element | null => {
+const Modal = (props: ModalProps) => {
   const { show, closeModal, title, children, footer = undefined } = props;
   const modalRef = useRef<HTMLDivElement>(null);
 
