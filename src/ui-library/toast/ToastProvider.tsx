@@ -10,7 +10,7 @@ const ToastContext = createContext<ToastContextType | null>(null);
 const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<ToastWithId[]>([]);
 
-  const activate = ({ message, type = 'info' }: BasicToast) => {
+  const activate = ({ message, type }: BasicToast) => {
     setToasts([...toasts, { id: uuidv4(), message, type }]);
   };
 

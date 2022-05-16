@@ -6,4 +6,6 @@ type ButtonProps = {
   size?: 'large' | 'small';
 } & ({ variant: 'primary' | 'secondary' } | { variant: 'icon'; ariaLabel: string });
 
+export type Ref = HTMLButtonElement;
+
 export default ButtonProps;

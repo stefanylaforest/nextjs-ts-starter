@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createRef } from 'react';
 import cx from 'classnames';
 
 import ToastProps from './interfaces';
@@ -13,7 +13,8 @@ import InfoIcon from '../../icons/info.svg';
 
 const Toast = (props: ToastProps) => {
   const [show, setShow] = useState<boolean>(true);
-  const { message, remove, type = 'info', id } = props;
+  const { message, remove, type, id } = props;
+  const ref = createRef<HTMLButtonElement>();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -32,10 +33,16 @@ const Toast = (props: ToastProps) => {
         return <ErrorIcon />;
       case 'warning':
         return <WarningIcon />;
-      default:
-        return;
     }
   };
+
+  const setFocus = () => {
+    ref.current && ref.current.focus();
+  };
+
+  useEffect(() => {
+    setFocus();
+  }, []);
 
   if (!show) {
     return null;
@@ -46,7 +53,7 @@ const Toast = (props: ToastProps) => {
         {renderToastIcon(type)} {message}
       </div>
       <div className={styles.leftCol}>
-        <Button variant="icon" onClick={() => remove(id)} ariaLabel="dismiss">
+        <Button variant="icon" onClick={() => remove(id)} ariaLabel="dismiss" ref={ref}>
           <XIcon />
         </Button>
       </div>

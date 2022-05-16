@@ -45,27 +45,27 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
 
   const handleWarning = () => {
     toast.activate({
-      message: 'this is a warning toast',
+      message: 'This is a warning toast',
       type: 'warning',
     });
   };
   const handleSuccess = () => {
     toast.activate({
-      message: 'this is a success toast',
+      message: 'This is a success toast',
       type: 'success',
     });
   };
 
   const handleError = () => {
     toast.activate({
-      message: 'this is a error toast',
+      message: 'This is an error toast',
       type: 'error',
     });
   };
 
   const handleInfo = () => {
     toast.activate({
-      message: 'this is a info toast',
+      message: 'This is an info toast',
       type: 'info',
     });
   };
