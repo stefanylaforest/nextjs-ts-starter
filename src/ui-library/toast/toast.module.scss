@@ -11,6 +11,7 @@
   padding: 20px;
   border-radius: $radius5;
   font-size: 18px;
+  line-height: 27px;
   margin: 20px 0;
   min-width: 280px;
 }
@@ -21,15 +22,13 @@
     &:hover {
       color: $white;
     }
-    svg {
-      margin-left: 10px;
-    }
   }
 }
 
 .rightCol {
   display: flex;
   overflow-wrap: anywhere;
+  margin-right: 10px;
   svg {
     width: 25px;
     margin-right: 10px;
