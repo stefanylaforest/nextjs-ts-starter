@@ -65,7 +65,7 @@ li {
 input,
 select,
 textarea {
-  font-size: 16px; // font-size < 16px makes ios devices zoom in
+  font-size: $normal;
   margin-top: 8px;
   border-radius: $radius5;
   padding: 8px 10px;
