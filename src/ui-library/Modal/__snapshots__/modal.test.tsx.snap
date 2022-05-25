@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should render without crashing  1`] = `
+<div
+  class="bodyOverlay"
+  data-testid="modal"
+  role="button"
+>
+  <div
+    class="modalWrapper"
+    role="dialog"
+  >
+    <div
+      class="header"
+    >
+      <button
+        aria-label="Close Modal"
+        class="icon"
+        type="button"
+      >
+        <svg
+          class="h-6 w-6"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 18 18 6M6 6l12 12"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="body"
+    >
+      <p>
+        A message
+      </p>
+    </div>
+  </div>
+</div>
+`;
