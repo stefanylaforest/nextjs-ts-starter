@@ -38,3 +38,210 @@ A `coverage` directory will be created and can be found in the main directory. I
 ## Icons
 
 Icons are from [Hero Icons](https://heroicons.com)
+
+## Theme 
+
+All variables are globally imported therefore you do not need to import them at the top of every scss file. 
+
+To change any colors, fonts, variables, you may find them in the theme directory.
+
+```
+- src/
+--- theme/
+----- base.scss
+----- colors.scss
+----- constants.scss
+----- fonts.scss
+----- variables.scss
+
+```
+
+## UI Library
+
+At this time, the UI library consists of:<br>
+
+🧩 [Button](#button) <br>
+🧩 [Card](#card) <br>
+🧩 [Modal](#modal) <br>
+🧩 [Toast](#toast) <br>
+
+###### Form Elements: <br>
+🧩 [Checkbox Input](#checkbox-input) <br>
+🧩 [Number Input](#number-input) <br>
+🧩 [Password Input](#password-input) <br>
+🧩 [Select](#select) <br>
+🧩 [Text Input](#text-input) <br>
+
+
+### Button
+<img width="544" alt="button-nextjs-ts-starter" src="https://user-images.githubusercontent.com/66086002/170540091-1f4cb4f9-e478-4c01-8c51-07febaf0c4a2.png">
+
+Valid Props:
+
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `variant`   |    button variant     |  `'primary'`, `'secondary'`, `'icon'`    |  | ✔️  |
+| `children`    | button content            | `React.ReactNode`  | | ✔️ |
+| `onClick`   |    button function     |  `() => void`    |  |  ✔️ |
+| `type`   |    button type     |  `'submit'`, `'reset'`, `'button'`    | `'button'` |   |
+| `disabled`  |  if true, it disables the button   |  `boolean`    | `false` |   |
+| `size`   |    the size of the button   |  `'large'`, `'small'`    | `'large'` |   |
+| `ariaLabel`   |    defines the aria-label for accessibility   |  `string`    |  | only if button has variant of `icon`  |
+
+| Accepts a ref ?   |
+|  :---            |
+|  ✔️ | 
+
+#### Examples: 
+Primary button example:
+```
+        <Button variant={'primary'} onClick={onClickHandler} size={'large'}>
+          My Button Content
+        </Button>
+ ```
+ Icon button example:
+ ```
+        <Button variant={'icon'} onClick={closeModal} ariaLabel={'Close Modal'}>
+          <MyIcon />
+        </Button>
+ ```
+
+### Card
+
+<img width="1304" alt="examples-of-cards" src="https://user-images.githubusercontent.com/66086002/170570744-1a6ffd02-6c8c-4189-80c6-9748411f364c.png">
+
+Valid Props:
+
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `header`   |    content of the card header     |  `string`, `React.ReactNode`   |  | See note  |
+| `body`    | content of card body            | `string`, `React.ReactNode` | | See note |
+| `footer`    | content of card footer          | `string`, `React.ReactNode` | | See note |
+
+**Note**: `Card` requires at least one Prop.
+
+#### Example: 
+
+```
+    <Card
+       header={<MyImage />}
+       body={<div>
+              <h3>Turkish Rivieria</h3>
+              <p>A week itinerary in Bodrum, Turkey</p>
+             </div>}
+        footer={<a href="/">Read Article</a>}
+     />
+```
+
+### Modal
+
+<img width="1789" alt="Screen Shot 2022-05-26 at 12 55 07 PM" src="https://user-images.githubusercontent.com/66086002/170572902-134f4931-de49-45b6-bc29-cfab41eb6cf6.png">
+
+Valid Props:
+
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `show`   |  Boolean that modal depends on to be rendered    |  `boolean`   |  | ✔️ |
+| `closeModal`    | Function that closes the modal          | `() => void`  | |  ✔️ |
+| `title`    | title of modal       | `string` | |  |
+| `children`    | content of modal body        | `React.ReactNode` | | ✔️ |
+| `footer`    | content of modal footer          | `React.ReactNode` | |  |
+
+#### Examples: 
+
+```
+        <Modal
+          show={showModal}
+          closeModal={() => setShowModal(false)}
+          title={'Modal Title'}
+          footer={
+            <Button variant={'primary'} onClick={() => setShowModal(false)} size={'small'}>
+              Close Modal
+            </Button>
+          }
+        >
+```
+
+### Toast
+
+<img width="412" alt="toasts" src="https://user-images.githubusercontent.com/66086002/170575100-43cca26a-fb71-4644-aaf4-debef131e8fe.png">
+
+To use, you must import the ToastContext and use the [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) hook. 
+Once imported, all you do is call the function and passing the necessary object.
+
+```
+{
+  message: 'This is an info toast',
+  type: 'info',
+}
+```
+
+Valid Object: 
+
+| keys | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `type`    | The type of toast         | `'info'`,`'success'`, `error`, `warning` | |  ✔️ |
+| `message`    | The content of the toast | `string`,`React.ReactNode` | |  ✔️ |
+
+
+#### Example: 
+
+```
+import { useContext } from 'react';
+import { ToastContext } from '<path to>/ui-library/Toast/ToastProvider';
+import { ToastContextType } from '<path to>/ui-library/Toast/interfaces';
+
+const MyComponent = (props) => {
+  const toast = useContext(ToastContext) as ToastContextType;
+
+  const fireToast = () => {
+      toast.activate({
+        message: 'This is an info toast',
+        type: 'info',
+      });
+  };
+
+return (
+    <div>
+      <button onClick={fireToast}>Click me to fire Toast</button>
+    </div>
+  )
+};
+```
+
+### Checkbox Input
+
+//TODO
+
+Valid Props:
+
+### Number Input
+
+//TODO
+
+Valid Props:
+
+### Password Input
+
+//TODO
+
+Valid Props:
+
+### Select
+
+//TODO
+
+Valid Props:
+
+### Text Input
+
+//TODO
+
+Valid Props:
+
+## 🔨 👷‍♀️ Improvements : 
+
+- [ ] **Toast**: Create a `location` prop to change where the toast is rendered. <br> ex: `bottom-left`, `bottom-right`, `middle-bottom`, `middle-top`, `top-right`, `top-left`
+- [ ] **Modal**: Lock background when modal is open
+
+If you have any suggestions for improvements, found a bug or would like to have a feature, please open an issue.
