@@ -35,6 +35,6 @@ npm run test:coveragereport
 
 A `coverage` directory will be created and can be found in the main directory. In the `coverage` directory, you can see an index file which can then be viewed with live server.
 
-## Credit
+## Icons
 
-Icons: https://heroicons.com
+Icons are from [Hero Icons](https://heroicons.com)
