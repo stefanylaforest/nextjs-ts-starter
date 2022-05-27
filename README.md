@@ -2,14 +2,16 @@
 
 A Next.js starter template in TypeScript
 
-**Table Of Contents**
 
-[Set Up](#set-up) <br>
-[Tests](#tests) <br>
-[Icons](#icons) <br>
-[Theme](#theme) <br>
-[UI Library](#ui-library) <br>
-[Improvements](#improvements) <br>
+
+|**Table Of Contents**|
+| :---                |
+|1. [Set Up](#set-up) |
+|2. [Tests](#tests) |
+|3. [Icons](#icons) |
+|4. [Theme](#theme) |
+|5. [UI Library](#ui-library) |
+|6. [Improvements](#improvements) |
 
 ## Set Up
 
@@ -390,7 +392,8 @@ Valid Props:
 
 ---
 
-## Improvements: 🔨 👷‍♀️
+## Improvements
+🔨👷‍♀️
 
 - [ ] **Select**: Change `Select` to accept an object with label and value instead of an array. <img width="70" src="https://img.shields.io/badge/Priority-High-red" alt="priority high">
 
