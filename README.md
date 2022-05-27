@@ -224,7 +224,7 @@ export default MyComponent;
 
 ### Checkbox Input
 
-//TODO add image
+<img width="265" alt="checkbox-input" src="https://user-images.githubusercontent.com/66086002/170731698-67064d10-3085-4292-af59-94ab323a3049.png">
 
 Valid Props:
 
@@ -254,7 +254,8 @@ Valid Props:
 
 ### Number Input
 
-//TODO
+<img width="311" alt="number-input" src="https://user-images.githubusercontent.com/66086002/170731766-540348d1-7d49-46c6-b039-75a12244edea.png">
+
 
 Valid Props:
 
@@ -286,7 +287,8 @@ Valid Props:
 
 ### Password Input
 
-//TODO
+<img width="320" alt="password-input" src="https://user-images.githubusercontent.com/66086002/170731810-e64e47a6-db3c-47e0-9797-143ccea3398a.png">
+
 
   | {
       value: string;
@@ -325,7 +327,7 @@ Note: The `PasswordInput` has a required attribute. `requiredSymbol` cannot be p
 
 ### Select
 
-//TODO
+<img width="312" alt="select" src="https://user-images.githubusercontent.com/66086002/170731846-c163d862-c2a9-461c-8a94-963f22c58137.png">
 
 Valid Props:
 
@@ -355,16 +357,8 @@ Valid Props:
 
 ### Text Input
 
-//TODO
+<img width="320" alt="text" src="https://user-images.githubusercontent.com/66086002/170731911-8bba61ed-cdc2-4035-8595-f709a32da7f3.png">
 
-  value: string;
-  name: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  label?: string;
-  required?: boolean;
-  placeholder?: string;
-  maxLength?: number;
-  readonly?: boolean;
 
 Valid Props:
 
@@ -387,6 +381,7 @@ Valid Props:
             name={'name'}
             value={formValues.name}
             onChange={onInputChange}
+            required={true}
           />
 ```
 
