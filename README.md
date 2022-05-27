@@ -256,7 +256,6 @@ Valid Props:
 
 <img width="311" alt="number-input" src="https://user-images.githubusercontent.com/66086002/170731766-540348d1-7d49-46c6-b039-75a12244edea.png">
 
-
 Valid Props:
 
 | Prop name      | Description | Type       | Default Prop | Required |
@@ -288,17 +287,6 @@ Valid Props:
 ### Password Input
 
 <img width="320" alt="password-input" src="https://user-images.githubusercontent.com/66086002/170731810-e64e47a6-db3c-47e0-9797-143ccea3398a.png">
-
-
-  | {
-      value: string;
-      name: string;
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-      placeholder?: string;
-    } & (
-      | { label?: undefined; requiredSymbol?: never }
-      | { label: string; requiredSymbol?: boolean }
-    );
 
 Valid Props:
 
