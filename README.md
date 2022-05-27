@@ -2,7 +2,16 @@
 
 A Next.js starter template in TypeScript
 
-## Setup
+**Table Of Contents**
+
+[Set Up](#set-up) <br>
+[Tests](#tests) <br>
+[Icons](#icons) <br>
+[Theme](#theme) <br>
+[UI Library](#ui-library) <br>
+[Improvements](#improvements) <br>
+
+## Set Up
 
 In your terminal, run:
 
@@ -169,19 +178,19 @@ Valid Props:
 To use, you must import the ToastContext and use the [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) hook. 
 Once imported, all you do is call the function and passing the necessary object.
 
-```
+```json
 {
-  message: 'This is an info toast',
-  type: 'info',
+  "message": "This is an info toast",
+  "type": "info",
 }
 ```
 
 Valid Object: 
 
-| keys | Description | Type       | Default Prop | Required |
+| Keys | Description | Type       | Default Prop | Required |
 | :---        | :----          | :---          | :---            |  :---            |
-| `type`    | The type of toast         | `'info'`,`'success'`, `error`, `warning` | |  ✔️ |
-| `message`    | The content of the toast | `string`,`React.ReactNode` | |  ✔️ |
+| `type`    | The type of toast         | `'info'`, `'success'`,  `'error'`,  `'warning'` | |  ✔️ |
+| `message`    | The content of the toast | `string`,  `React.ReactNode` | |  ✔️ |
 
 
 #### Example: 
@@ -207,13 +216,39 @@ return (
     </div>
   )
 };
+
+export default MyComponent;
 ```
 
 ### Checkbox Input
 
-//TODO
+//TODO add image
 
 Valid Props:
+
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `name`      |  Name of the input    |  `string`   |  | ✔️ |
+| `label`     | The checkbox's label          | `string`, `React.ReactNode`  | |  ✔️ |
+| `onChange`  | Function that handles the input change | `(e: React.ChangeEvent<HTMLInputElement>) => void` | |  ✔️ |
+| `checked`   | Attribute to determine if the checkbox is checked | `boolean` | | ✔️ |
+| `disabled`  | disables the checkbox input | `boolean` | |  |
+
+#### Example: 
+
+```
+        <CheckboxInput
+          name={'developer'}
+          label={
+            <>
+              I am a <span className="bold">not</span> a Developer
+            </>
+          }
+          checked={formValues.developer}
+          onChange={MyOnInputChangeFunction}
+        />
+
+```
 
 ### Number Input
 
@@ -221,11 +256,70 @@ Valid Props:
 
 Valid Props:
 
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `name`      | |  `string`   |  | ✔️ |
+| `value`      | |  `string`, `number`   |  | ✔️ |
+| `onChange`  | Function that handles the input change | `(e: React.ChangeEvent<HTMLInputElement>) => void` | |  ✔️ |
+| `label`     | | `string`, `React.ReactNode`  | |  |
+| `placeholder` |  | `string` | |  |
+| `required`  |  | `boolean` | `false` |  |
+| `min`  |  | `number` | |  |
+| `max`  |  | `number` | |  |
+| `readonly`  |  | `boolean` | `false` |  |
+| `step`  |  | `number` | `1` |  |
+
+#### Example: 
+
+```
+          <NumberInput
+            label={'Age:'}
+            name={'age'}
+            value={formValues.age}
+            onChange={onInputChange}
+            min={18}
+          />
+
+```
+
 ### Password Input
 
 //TODO
 
+  | {
+      value: string;
+      name: string;
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+      placeholder?: string;
+    } & (
+      | { label?: undefined; requiredSymbol?: never }
+      | { label: string; requiredSymbol?: boolean }
+    );
+
 Valid Props:
+
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `name`      | |  `string`   |  | ✔️ |
+| `value`      | |  `string`   |  | ✔️ |
+| `onChange`  | Function that handles the input change | `(e: React.ChangeEvent<HTMLInputElement>) => void` | |  ✔️ |
+| `label`     | | `string`, `React.ReactNode`  | |  |
+| `placeholder` |  | `string` | |  |
+| `requiredSymbol`  |  | `boolean` | `true` |  |
+
+Note: The `PasswordInput` has a required attribute. `requiredSymbol` cannot be passed as a prop if label is not passed as a prop.
+
+#### Example:
+
+```
+          <PasswordInput
+            name={'password'}
+            value={formValues.password}
+            label={'Enter Your Password'}
+            onChange={onInputChange}
+            requiredSymbol={true}
+          />
+```
 
 ### Select
 
@@ -233,15 +327,74 @@ Valid Props:
 
 Valid Props:
 
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `options`      | |  `string[]`   |  | ✔️ |
+| `onChange`  | Function that handles the select change | `(value: string) => void` | |  ✔️ |
+| `placeholder` |  | `string` | `null` |  |
+| `required`  |  | `boolean` | `false` | |
+| `label`     | | `string`  | |  |
+| `defaultValue`| |  `string`   | `undefined` |  |
+
+### Example
+
+```
+          <Select
+            label={'Select Country:'}
+            onChange={onSelectChange}
+            options={selectValues}
+            placeholder={'Select A Country'}
+            required={true}
+            defaultValue={formValues.country}
+          />
+
+```
+
+
 ### Text Input
 
 //TODO
 
+  value: string;
+  name: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  label?: string;
+  required?: boolean;
+  placeholder?: string;
+  maxLength?: number;
+  readonly?: boolean;
+
 Valid Props:
 
-## 🔨 👷‍♀️ Improvements : 
+| Prop name      | Description | Type       | Default Prop | Required |
+| :---        | :----          | :---          | :---            |  :---            |
+| `name`      | |  `string`   |  | ✔️ |
+| `value`      | |  `string`   |  | ✔️ |
+| `onChange`  | Function that handles the input change | `(e: React.ChangeEvent<HTMLInputElement>) => void` | |  ✔️ |
+| `label`     | | `string` | |  |
+| `required`  |  | `boolean` | `false` |  |
+| `placeholder` |  | `string` | |  |
+| `maxLength` |  | `number` | `80` |  |
+| `readonly` |  | `boolean` | `false` |  |
 
-- [ ] **Toast**: Create a `location` prop to change where the toast is rendered. <br> ex: `bottom-left`, `bottom-right`, `middle-bottom`, `middle-top`, `top-right`, `top-left`
+### Examples
+
+```
+          <TextInput
+            label={'Name:'}
+            name={'name'}
+            value={formValues.name}
+            onChange={onInputChange}
+          />
+```
+
+---
+
+## Improvements: 🔨 👷‍♀️
+
+- [ ] **Select**: Change `Select` to accept an object with label and value instead of an array. !\[my badge\](https://img.shields.io/badge/Priority-High-red)
+
 - [ ] **Modal**: Lock background when modal is open
+- [ ] **Toast**: Create a `location` prop to change where the toast is rendered. <br> ex: `bottom-left`, `bottom-right`, `middle-bottom`, `middle-top`, `top-right`, `top-left` 
 
 If you have any suggestions for improvements, found a bug or would like to have a feature, please open an issue.
