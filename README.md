@@ -50,6 +50,8 @@ A `coverage` directory will be created and can be found in the main directory. I
 
 Icons are from [Hero Icons](https://heroicons.com)
 
+I am using Airbnb's [babel-plugin-inline-react-svg](https://github.com/airbnb/babel-plugin-inline-react-svg) to turn the icons into React Components.
+
 ## Theme 
 
 All variables are globally imported therefore you do not need to import them at the top of every scss file. 
