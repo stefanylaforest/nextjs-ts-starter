@@ -384,5 +384,6 @@ Valid Props:
 
 - [ ] **Modal**: Lock background when modal is open <img width="70" src="https://img.shields.io/badge/Priority-High-red" alt="priority high">
 - [ ] **Toast**: Create a `location` prop to change where the toast is rendered. <br> ex: `bottom-left`, `bottom-right`, `middle-bottom`, `middle-top`, `top-right`, `top-left` 
+- [] use absolute imports
 
 If you have any suggestions for improvements, found a bug or would like to have a feature, please open an issue.
