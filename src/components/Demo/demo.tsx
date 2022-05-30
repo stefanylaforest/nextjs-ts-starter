@@ -40,7 +40,7 @@ const Demo: React.FunctionComponent = (): JSX.Element => {
   const selectValues: string[] = ['canada', 'usa', 'mexico'];
 
   const onClickHandler = () => {
-    console.log('clicked');
+    console.log('hello');
   };
 
   const handleWarning = () => {
