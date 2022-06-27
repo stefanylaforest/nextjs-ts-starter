@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 13.x, 14.x, 15.x, 16.x]
+        node-version: [12.x, 13.x, 14.x, 15.x]
 
     steps:
     - name: Checkout repository
@@ -30,11 +30,3 @@ jobs:
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
-      with:
-        directory: ./coverage/reports/
-        fail_ci_if_error: true
-        files: ./coverage1.xml,./coverage2.xml
-        flags: unittests
-        name: codecov-umbrella
-        path_to_write_report: ./coverage/codecov_report.txt
-        verbose: true

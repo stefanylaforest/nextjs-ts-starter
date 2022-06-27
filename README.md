@@ -1,6 +1,6 @@
-# Nextjs + TypeScript
+# Nextjs + TypeScript [![codecov](https://codecov.io/gh/stefanylaforest/nextjs-ts-starter/branch/main/graph/badge.svg?token=4AH58OHO79)](https://codecov.io/gh/stefanylaforest/nextjs-ts-starter)
 
-A Next.js starter template in TypeScript
+A Next.js starter template in TypeScript 
 
 
 
@@ -24,7 +24,11 @@ npm run dev
 
 Go to `localhost:3000` to view the demo.
 
-## Tests
+## Tests 
+
+Coverage:
+
+[![codecov](https://codecov.io/gh/stefanylaforest/nextjs-ts-starter/branch/main/graph/badge.svg?token=4AH58OHO79)](https://codecov.io/gh/stefanylaforest/nextjs-ts-starter)
 
 To run tests, in your terminal, run:
 
